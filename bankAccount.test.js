@@ -6,16 +6,19 @@ describe('BankAccount', () => {
     expect(bank.getBalance()).toBe(0)
   })
 
-  it('User can submit funds into bank account', () => {
-    let bank = new BankAccount();
-
-    expect(bank.depositMoney(20)).toBe(20)
+  describe(`.depositMoney`, () => {
+    it('User can submit funds into bank account', () => {
+      let bank = new BankAccount();
+  
+      expect(bank.depositMoney(20)).toBe(20)
+    })
   })
 
-  it('User can take funds from bank account', () => {
-    let bank = new BankAccount();
-
-    expect(bank.withdrawMoney(20)).toBe(0)
+  describe(`.withdrawMoney`, () => {
+    it('User can take funds from bank account', () => {
+      let bank = new BankAccount();
+  
+      expect(bank.withdrawMoney(20)).toBe(0)
+    })
   })
-
 })
