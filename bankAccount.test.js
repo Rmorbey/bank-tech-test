@@ -11,5 +11,11 @@ describe('BankAccount', () => {
 
     expect(bank.depositMoney(20)).toBe(20)
   })
-  
+
+  it('User can take funds from bank account', () => {
+    let bank = new BankAccount();
+
+    expect(bank.withdrawMoney(20)).toBe(0)
+  })
+
 })
