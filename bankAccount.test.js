@@ -45,4 +45,17 @@ describe('BankAccount', () => {
       expect(bank.getBalance()).toBe(50)
     })
   })
+
+  it('User can deposit and withdraw money and the balance will be correct', () => {
+    let bank = new BankAccount();
+
+    bank.balance = 150;
+
+    bank.withdrawMoney(100);
+    bank.depositMoney(1000);
+    bank.depositMoney(500);
+    bank.withdrawMoney(750);
+
+    expect(bank.getBalance()).toBe(800)
+  })
 })
