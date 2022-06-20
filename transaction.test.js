@@ -12,4 +12,11 @@ describe('Transaction', () => {
 
     expect(transaction.amount).toBe(1000)
   })
+
+  it('records the balance of the transaction', () => {
+    let transaction = new Transaction('deposit', 1000, 1000, '20/06/2022')
+
+    expect(transaction.balance).toBe(1000)
+  })
+
 })

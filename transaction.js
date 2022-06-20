@@ -2,6 +2,7 @@ class Transaction {
   constructor() {
     this.type = 'deposit';
     this.amount = 1000;
+    this.balance = 1000;
   }
 }
 
