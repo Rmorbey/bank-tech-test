@@ -59,6 +59,75 @@ Transaction
 
 ----------
 
+User Stories 
+
+----------
+
+BankAccount
+
+```
+As a customer,
+So I can save for my future,
+I would like to open a bank account
+```
+
+```
+As a Bank Manager,
+So we can look after a customers money,
+I would like the Bank Account to start with a balance of 0
+```
+
+```
+As a Bank Manager,
+So we can look after a customers money,
+I would like the Bank Account to have a min account balance of 0
+```
+
+Edge Cases
+
+```
+As a Bank Manager,
+So we can look after a customers money,
+I would like to notify them if they have insufficient funds and what their current balance is
+```
+
+```
+As a Bank Manager,
+So we can look after a customers money,
+I would like to notify them if their account is empty
+```
+
+```
+As a Bank Manager,
+So we can look after a customers money,
+I would like to notify them of an incorrect input amount
+```
+
+Depositing
+
+```
+As a customer,
+So I can save money,
+I would like to be able to deposit money into my Bank Account
+```
+
+Withdrawing
+
+```
+As a customer,
+So I can use my money,
+I would like to be able to withdraw money from my Bank Account
+```
+
+Account Statement
+
+```
+As a customer,
+So I can keep track of money,
+I would like a statement to show my deposit and withdraw transactions and current balance
+```
+----------
+
 Testing
 
 deposit
