@@ -44,4 +44,14 @@ describe('BankAccount', () => {
       expect(bank.getBalance()).toBe(800)
     });
   });
+
+  describe(`View statement and transactions`, () => {
+    it(`displays the header`, () => {
+      console.log = jest.fn();
+
+      bank.viewStatement();
+
+      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance')
+    });
+  })
 })

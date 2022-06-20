@@ -55,7 +55,9 @@ Classes
 
 BankAccount
 
-Transaction
+Transaction ?
+
+Statement ?
 
 ----------
 
@@ -70,18 +72,14 @@ As a customer,
 So I can save for my future,
 I would like to open a bank account
 ```
+^ Tested.
 
 ```
 As a Bank Manager,
 So we can look after a customers money,
 I would like the Bank Account to start with a balance of 0
 ```
-
-```
-As a Bank Manager,
-So we can look after a customers money,
-I would like the Bank Account to have a min account balance of 0
-```
+^ Tested.
 
 Edge Cases
 
@@ -110,6 +108,7 @@ As a customer,
 So I can save money,
 I would like to be able to deposit money into my Bank Account
 ```
+^ Tested.
 
 Withdrawing
 
@@ -118,13 +117,14 @@ As a customer,
 So I can use my money,
 I would like to be able to withdraw money from my Bank Account
 ```
+^ Tested.
 
 Account Statement
 
 ```
 As a customer,
 So I can keep track of money,
-I would like a statement to show my deposit and withdraw transactions and current balance
+I would like a statement to show my deposit and withdraw transactions, date of transaction and balance afterwards
 ```
 ----------
 
