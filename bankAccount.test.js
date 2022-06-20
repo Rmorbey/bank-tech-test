@@ -53,5 +53,17 @@ describe('BankAccount', () => {
 
       expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance')
     });
+
+    it(`displays the header with a deposit transaction`, () => {
+      console.log = jest.fn();
+
+      bank.depositMoney(1000, '20-06-2022');
+      bank.viewStatement();
+
+      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance\n'
+      + '20/06/2022 || 1000.00 || || 1000.00')
+    });
+
+
   })
 })
