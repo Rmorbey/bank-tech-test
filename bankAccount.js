@@ -5,7 +5,7 @@ class BankAccount {
   }
 
   depositMoney(money) {
-    return money;
+    return money + 0;
   }
 }
 
