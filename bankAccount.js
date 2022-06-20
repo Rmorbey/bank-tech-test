@@ -14,7 +14,8 @@ class BankAccount {
   }
 
   withdrawMoney(money) {
-    return money - money;
+    this.balance -= money;
+    return this.balance;
   }
 }
 

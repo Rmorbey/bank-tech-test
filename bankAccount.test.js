@@ -27,8 +27,22 @@ describe('BankAccount', () => {
   describe(`.withdrawMoney`, () => {
     it('User can withdraw money from the bank account', () => {
       let bank = new BankAccount();
+
+      bank.balance = 20;
   
       expect(bank.withdrawMoney(20)).toBe(0)
+    })
+
+    it('User can withdraw money multiple times from the bank account and show the balance', () => {
+      let bank = new BankAccount();
+
+      bank.balance = 350
+
+      bank.withdrawMoney(100);
+      bank.withdrawMoney(100);
+      bank.withdrawMoney(100);
+  
+      expect(bank.getBalance()).toBe(50)
     })
   })
 })
