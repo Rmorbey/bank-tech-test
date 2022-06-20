@@ -1,11 +1,16 @@
 class BankAccount {
 
+  constructor() {
+    this.balance = 0;
+  }
+
   getBalance() {
-    return 0;
+    return this.balance;
   }
 
   depositMoney(money) {
-    return money + 0;
+    this.balance += money;
+    return this.balance;
   }
 
   withdrawMoney(money) {
