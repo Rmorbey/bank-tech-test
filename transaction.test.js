@@ -30,9 +30,15 @@ describe('Transaction', () => {
 
   describe('withdraw transaction', () => {
     it('records the type of the transaction', () => {
-      let transaction = new Transaction('withdraw', 1000, 2000, '21/06/2022')
+      let transaction = new Transaction('withdraw', 500, 2000, '21/06/2022')
       expect(transaction.type).toBe('withdraw')
     })
+  })
+
+  it('records the amount of the transaction', () => {
+    let transaction = new Transaction('withdraw', 500, 2000, '21/06/2022')
+
+    expect(transaction.amount).toBe(500)
   })
 
 })
