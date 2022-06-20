@@ -47,4 +47,10 @@ describe('Transaction', () => {
     expect(transaction.balance).toBe(2000)
   })
 
+  it('records the date of the transaction', () => {
+    let transaction = new Transaction('withdraw', 500, 2000, '21/06/2022')
+
+    expect(transaction.date).toBe('21/06/2022')
+  })
+
 })

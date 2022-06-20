@@ -1,9 +1,9 @@
 class Transaction {
-  constructor(type, amount, balance) {
+  constructor(type, amount, balance, date) {
     this.type = type;
     this.amount = amount;
     this.balance = balance;
-    this.date = '20/06/2022';
+    this.date = date;
   }
 }
 
