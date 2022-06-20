@@ -9,7 +9,7 @@ class BankAccount {
   }
 
   withdrawMoney(money) {
-    return 0;
+    return money - money;
   }
 }
 
