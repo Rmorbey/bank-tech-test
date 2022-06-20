@@ -123,8 +123,16 @@ Account Statement
 
 ```
 As a customer,
-So I can keep track of money,
+So I can keep track of my money,
 I would like a statement to show my deposit and withdraw transactions, date of transaction and balance afterwards
+```
+
+Transactions
+
+```
+As a Bank Manager,
+So we can keep our Accounts up to date,
+I would like to log each transaction with date, type of transaction, amount and balance after.
 ```
 ----------
 
