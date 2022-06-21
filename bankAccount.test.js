@@ -1,4 +1,5 @@
 const BankAccount = require('./bankAccount');
+const Transaction = require('./transaction');
 
 describe('BankAccount', () => {
   let bank;
@@ -46,6 +47,12 @@ describe('BankAccount', () => {
   });
 
   describe(`View statement and transactions`, () => {
+    let transaction
+
+    beforeEach(() => {
+      transaction = new Transaction();
+    }) 
+
     it(`displays the header`, () => {
       console.log = jest.fn();
 
@@ -65,21 +72,31 @@ describe('BankAccount', () => {
     });
 
     it(`Transactions contain the depoist transaction data`, () => {
-      const expected = ['deposit', 1000, 1000]
+      const expected = [{"amount": 1000, "balance": 1000, "date": `${transaction.date}`, "type": "deposit"}]
 
       bank.depositMoney(1000)
 
       expect(bank.transactions).toEqual(expect.arrayContaining(expected))
     });
 
-    it(`Transactions contain the depoist transaction data`, () => {
-      const expected = ['withdraw', 500, 5000]
+    it(`Transactions contain the withdraw transaction data`, () => {
+      const expected = [{"amount": 500, "balance": 500, "date": `${transaction.date}`, "type": "withdraw"}]
+
+      bank.balance = 1000;
 
       bank.withdrawMoney(500)
 
       expect(bank.transactions).toEqual(expect.arrayContaining(expected))
     });
 
+    it(`Transactions contain the deposit and withdraw transaction data`, () => {
+      const expected = [{"amount": 1000, "balance": 1000, "date": `${transaction.date}`, "type": "deposit"},
+       {"amount": 800, "balance": 200, "date": `${transaction.date}`, "type": "withdraw"}]
 
+      bank.depositMoney(1000)
+      bank.withdrawMoney(800)
+
+      expect(bank.transactions).toEqual(expect.arrayContaining(expected))
+    });
   })
 })

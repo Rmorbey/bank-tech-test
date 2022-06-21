@@ -14,13 +14,13 @@ class BankAccount {
 
   depositMoney(money) {
     this.balance += money;
-    this.transactions.push('deposit', 1000, 1000)
+    this.transactions.push(new this.transaction('deposit', money, this.balance))
     return this.balance;
   }
 
   withdrawMoney(money) {
     this.balance -= money;
-    this.transactions.push('withdraw', 500, 5000)
+    this.transactions.push(new this.transaction('withdraw', money, this.balance))
     return this.balance;
   }
 
