@@ -36,7 +36,7 @@ class BankAccount {
     transactions.forEach((transaction) => {
       this.transactionFormat(transaction);
     })
-    return this.statement;
+    return this.statement.join('\n');
   }
 
   transactionFormat(transaction) {
