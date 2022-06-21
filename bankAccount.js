@@ -6,6 +6,7 @@ class BankAccount {
     this.balance = 0;
     this.transactions = [];
     this.transaction = transaction;
+    this.statement = [];
     this.header = 'date || credit || debit || balance';
   }
 
@@ -25,17 +26,25 @@ class BankAccount {
     return this.balance;
   }
 
-  viewStatement() {
-    if (this.balance === 0) {
-      return console.log(`${this.printStatementHeader()}`);
-    } else {
-      return console.log(`${this.printStatementHeader()}\n`
-    + '20/06/2022 || 1000.00 || || 1000.00');
-    }
+  viewStatement(transactions = this.transactions ) {
+    const statement = `${this.header}\n`
+    + `${this.printTransactions(transactions)}`;
+    return console.log(statement);
   }
 
-  printStatementHeader() {
-    return this.header;
+  printTransactions(transactions) {
+    transactions.forEach((transaction) => {
+      this.transactionFormat(transaction);
+    })
+    return this.statement;
+  }
+
+  transactionFormat(transaction) {
+    if(transaction.type === 'deposit') {
+      this.statement.push(`${transaction.date} || ${transaction.amount.toFixed(2)} || || ${transaction.balance.toFixed(2)}`);
+    } else if(transaction.type === 'withdraw') {
+      this.statement.push(`${transaction.date} || || ${transaction.amount.toFixed(2)} || ${transaction.balance.toFixed(2)}`);
+    }
   }
 }
 

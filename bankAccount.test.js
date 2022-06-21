@@ -2,10 +2,13 @@ const BankAccount = require('./bankAccount');
 const Transaction = require('./transaction');
 
 describe('BankAccount', () => {
+
   let bank;
+  let transaction;
 
   beforeEach(() => {
     bank = new BankAccount();
+    transaction = new Transaction();
   }) 
 
   it('Bank account starts with a balance of 0', () => {
@@ -13,6 +16,7 @@ describe('BankAccount', () => {
   })
 
   describe(`Account interactions`, () => {
+
     it('User can deposit money multiple times into the bank account and show the balance', () => {
 
       bank.depositMoney(100);
@@ -46,32 +50,9 @@ describe('BankAccount', () => {
     });
   });
 
-  describe(`View statement and transactions`, () => {
-    let transaction
+  describe(`View transactions`, () => {
 
-    beforeEach(() => {
-      transaction = new Transaction();
-    }) 
-
-    it(`displays the header`, () => {
-      console.log = jest.fn();
-
-      bank.viewStatement();
-
-      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance')
-    });
-
-    it(`displays the header with a deposit transaction`, () => {
-      console.log = jest.fn();
-
-      bank.depositMoney(1000, '20-06-2022');
-      bank.viewStatement();
-
-      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance\n'
-      + '20/06/2022 || 1000.00 || || 1000.00')
-    });
-
-    it(`Transactions contain the depoist transaction data`, () => {
+    it(`Transactions contain the deposit transaction data`, () => {
       const expected = [{"amount": 1000, "balance": 1000, "date": `${transaction.date}`, "type": "deposit"}]
 
       bank.depositMoney(1000)
@@ -97,6 +78,31 @@ describe('BankAccount', () => {
       bank.withdrawMoney(800)
 
       expect(bank.transactions).toEqual(expect.arrayContaining(expected))
+    });
+  })
+
+  describe('view statements', () => {
+
+    it(`displays the header with a deposit transaction`, () => {
+      console.log = jest.fn();
+
+      bank.depositMoney(1000);
+      bank.viewStatement();
+
+      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance\n'
+      + `${transaction.date} || 1000.00 || || 1000.00`)
+    });
+
+    it(`displays the header with a withdraw transaction`, () => {
+      console.log = jest.fn();
+
+      bank.balance = 1050;
+
+      bank.withdrawMoney(1000);
+      bank.viewStatement();
+
+      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance\n'
+      + `${transaction.date} || || 1000.00 || 50.00`)
     });
   })
 })
