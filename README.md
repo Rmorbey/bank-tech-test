@@ -18,11 +18,11 @@
 |                    |            | 10/01/23 . 1000.00 .        . 1000.00 |
 
 
-Input will be two arguements.
+Input will be one arguement.
 
-function    (money,  date    )
-depositMoney(1000, 10-01-2023)
-withdrawMoney(500, 14-01-2023)
+function    (money)
+depositMoney(1000)
+withdrawMoney(500)
 
 Output will be a structured table with data.
 
@@ -35,19 +35,18 @@ Output will be a structured table with data.
 
 Display the statement no arguments.
 
-printStatement()
+viewStatement()
 
 --------
 
 Things I'll need.
 
 balance
-min balance
-transaction history
+transaction history (transactions)
 deposit function
 withdraw function
-check balance function
-print statement function
+check balance function (getBalance)
+print statement function (viewStatement)
 
 ----------
 
@@ -55,7 +54,7 @@ Classes
 
 BankAccount
 
-Transaction ?
+Transaction
 
 Statement ?
 
@@ -127,6 +126,8 @@ So I can keep track of my money,
 I would like a statement to show my deposit and withdraw transactions, date of transaction and balance afterwards
 ```
 
+^ Tested.
+
 Transactions
 
 ```
@@ -135,25 +136,6 @@ So we can keep our Accounts up to date,
 I would like to log each transaction with date, type of transaction, amount and balance after.
 ```
 ^ Tested.
-----------
-
-Testing
-
-deposit
-
-that money gets deposisted
-
-withdraw
-
-that money gets withdrawn
-
-check balance
-
-shows correct balance after an interaction
-
-print statement
-
-shows a statement with correct date, either deposit or withdraw and current balance
 
 =======
 
