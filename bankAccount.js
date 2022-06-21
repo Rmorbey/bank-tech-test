@@ -6,6 +6,7 @@ class BankAccount {
     this.balance = 0;
     this.transactions = [];
     this.transaction = transaction;
+    this.header = 'date || credit || debit || balance';
   }
 
   getBalance() {
@@ -26,11 +27,15 @@ class BankAccount {
 
   viewStatement() {
     if (this.balance === 0) {
-      return console.log('date || credit || debit || balance')
+      return console.log(`${this.printStatementHeader()}`);
     } else {
-      return console.log('date || credit || debit || balance\n'
+      return console.log(`${this.printStatementHeader()}\n`
     + '20/06/2022 || 1000.00 || || 1000.00');
     }
+  }
+
+  printStatementHeader() {
+    return this.header;
   }
 }
 

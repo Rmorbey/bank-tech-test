@@ -134,6 +134,7 @@ As a Bank Manager,
 So we can keep our Accounts up to date,
 I would like to log each transaction with date, type of transaction, amount and balance after.
 ```
+^ Tested.
 ----------
 
 Testing
