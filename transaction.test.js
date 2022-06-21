@@ -4,6 +4,8 @@ describe('Transaction', () => {
 
   it('displays the current date', () => {
     let transaction = new Transaction('deposit', 1000, 1000)
+
+    console.log(transaction.date)
     
     expect(transaction.date).toEqual(transaction.formatDate())
   })

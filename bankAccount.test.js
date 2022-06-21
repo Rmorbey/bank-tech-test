@@ -64,6 +64,14 @@ describe('BankAccount', () => {
       + '20/06/2022 || 1000.00 || || 1000.00')
     });
 
+    it(`Transactions contain the depoist transaction data`, () => {
+      const expected = ['deposit', 1000, 1000]
+
+      bank.depositMoney(1000)
+
+      expect(bank.transactions).toEqual(expect.arrayContaining(expected))
+    });
+
 
   })
 })
