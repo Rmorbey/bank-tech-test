@@ -20,6 +20,7 @@ class BankAccount {
 
   withdrawMoney(money) {
     this.balance -= money;
+    this.transactions.push('withdraw', 500, 5000)
     return this.balance;
   }
 

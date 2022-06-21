@@ -72,6 +72,14 @@ describe('BankAccount', () => {
       expect(bank.transactions).toEqual(expect.arrayContaining(expected))
     });
 
+    it(`Transactions contain the depoist transaction data`, () => {
+      const expected = ['withdraw', 500, 5000]
+
+      bank.withdrawMoney(500)
+
+      expect(bank.transactions).toEqual(expect.arrayContaining(expected))
+    });
+
 
   })
 })
