@@ -28,7 +28,7 @@ class BankAccount {
 
   viewStatement(transactions = this.transactions ) {
     const statement = `${this.header}\n`
-    + `${this.printTransactions(transactions)}`;
+    + `${this.sortTransactions(transactions)}`;
     return console.log(statement);
   }
 
@@ -42,7 +42,7 @@ class BankAccount {
   transactionFormat(transaction) {
     if(transaction.type === 'deposit') {
       this.statement.push(`${transaction.date} || ${transaction.amount.toFixed(2)} || || ${transaction.balance.toFixed(2)}`);
-    } else if(transaction.type === 'withdraw') {
+    } if(transaction.type === 'withdraw') {
       this.statement.push(`${transaction.date} || || ${transaction.amount.toFixed(2)} || ${transaction.balance.toFixed(2)}`);
     }
   }
