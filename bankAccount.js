@@ -3,7 +3,7 @@ const Transaction = require('./transaction')
 class BankAccount {
 
   constructor(transaction = Transaction) {
-    this.balance = 0;
+    this.balance = 0.00;
     this.transactions = [];
     this.transaction = transaction;
     this.statement = [];
@@ -32,7 +32,7 @@ class BankAccount {
     return console.log(statement);
   }
 
-  printTransactions(transactions) {
+  sortTransactions(transactions) {
     transactions.forEach((transaction) => {
       this.transactionFormat(transaction);
     })
