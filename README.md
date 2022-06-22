@@ -56,7 +56,7 @@ A simple application that allows a customer to have a bank account where they ca
 5. I then started to write my first test.
 6. I followed a structured TDD approach. Following a strict Red - Green (Pass the test in the simplest way possible, often hard coding. Then commit) - Refactor (If I needed to after my tests required more complex logic. Otherwise I moved straight onto writing the next failing Red test until I needed to refactor) - Repeat.
 7. I started with the BankAccount class, I then moved onto the Transaction class. Both following the above structure.
-8. At the end I thought about additional edge cases and wrot User stories for them. I didn't have the time to implement the User Stories. I also thought about potentially splitting BankAccount into a deposit class which would catch and throw back errors. A withdraw class that would also catch and throw back errors. As well as a statement class to deal with the handling of formatting the statement for the customer to view.
+8. At the end I thought about additional edge cases and wrote User stories for them. I didn't have the time to implement the edge case User Stories. I also thought about potentially splitting BankAccount into a deposit class which would catch and throw back errors. A withdraw class that would also catch and throw back errors. As well as a statement class to deal with the handling of formatting the statement for the customer to view.
 
 ### Input - output table
 
@@ -114,20 +114,20 @@ So I can use my money,
 I would like to be able to withdraw money from my Bank Account
 ```
 
-### Account Statement
-
-```
-As a customer,
-So I can keep track of my money,
-I would like a statement to show my deposit and withdraw transactions, date of transaction and balance afterwards
-```
-
 ### Transactions
 
 ```
 As a Bank Manager,
 So we can keep our Accounts up to date,
 I would like to log each transaction with date, type of transaction, amount and balance after.
+```
+
+### Account Statement
+
+```
+As a customer,
+So I can keep track of my money,
+I would like a statement to show my deposit and withdraw transactions, date of transaction and balance afterwards
 ```
 
 ### Edge Cases
